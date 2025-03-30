@@ -1,0 +1,38 @@
+{
+    "login":{
+        "title":"Sign In",
+        "email":"Email address",
+        "password":"Password",
+        "submit":"Login",
+        "logout": "Logout"
+    },
+    "signup":{
+        "title":"Create an account",
+        "email":"Email address",
+        "password":"Password",
+        "confirmPassword":"Confirm password",
+        "submit":"Sign up"
+    },
+    "movies":{
+        "emptyList":"Your movie list is empty",
+        "add":"Add a new movie",
+        "edit":"Edit a Movie",
+        "title":"My Movies"
+    },
+    "pagination":{
+        "prev":"Previous",
+        "next":"Next"
+    },
+    "api": {
+        "loginSuccess": "Login successful",
+        "loginFailed": "Invalid credentials",
+        "signupSuccess": "User created successfully",
+        "signupFailed": "Signup failed. Please try again",
+        "movieAddSuccess": "Movie added successfully",
+        "movieAddFailed": "Failed to add movie",
+        "movieUpdateSuccess": "Movie updated successfully",
+        "movieUpdateFailed": "Failed to update movie",
+        "unauthorized": "You are not authorized to perform this action.",
+        "serverError": "Something went wrong. Please try again later."
+      }
+    }
