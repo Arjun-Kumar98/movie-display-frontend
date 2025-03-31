@@ -8,11 +8,10 @@ import { MovieFormProps, MovieFormData } from './MovieForm.types';
 import { movieFormSchema } from './MovieForm.validation';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
-import './MovieForm.css';
+import styles from './MovieForm.module.css'; // ✅ Correct CSS Module import
 
 const MovieForm: React.FC<MovieFormProps> = ({ mode, initialValues, onSubmit }) => {
   const router = useRouter(); 
-
   const [isPosterRemoved, setIsPosterRemoved] = useState(false);
 
   const {
@@ -45,16 +44,17 @@ const MovieForm: React.FC<MovieFormProps> = ({ mode, initialValues, onSubmit }) 
   };
 
   return (
-    <form onSubmit={handleSubmit(submitHandler)} className="movie-form">
-      <div className="movie-form-container">
+    <form onSubmit={handleSubmit(submitHandler)} className={styles['movie-form']}>
+      <div className={styles['movie-form-container']}>
+
         {/* Poster Upload or Preview */}
-        <div className="poster-upload">
+        <div className={styles['poster-upload']}>
           {posterPreviewSrc ? (
-            <div className="poster-preview-wrapper">
-              <img src={posterPreviewSrc} alt="Poster Preview" className="poster-preview" />
+            <div className={styles['poster-preview-wrapper']}>
+              <img src={posterPreviewSrc} alt="Poster Preview" className={styles['poster-preview']} />
               <button
                 type="button"
-                className="remove-poster-btn"
+                className={styles['remove-poster-btn']}
                 onClick={handleRemovePoster}
               >
                 ❌ Remove Poster
@@ -72,7 +72,7 @@ const MovieForm: React.FC<MovieFormProps> = ({ mode, initialValues, onSubmit }) 
         </div>
 
         {/* Form Inputs */}
-        <div className="form-inputs">
+        <div className={styles['form-inputs']}>
           <InputField
             type="text"
             name="title"
@@ -92,16 +92,14 @@ const MovieForm: React.FC<MovieFormProps> = ({ mode, initialValues, onSubmit }) 
           />
 
           {/* Buttons */}
-          <div className="form-actions">
+          <div className={styles['form-actions']}>
             <Button
               type="submit"
               label={mode === 'edit' ? 'Update Movie' : 'Add Movie'}
-              className="submit-button"
             />
             <Button
               type="reset"
               label="Cancel"
-              className="cancel-button"
               onClick={() => {
                 if (mode === 'edit') router.push('/movieList');
                 else {

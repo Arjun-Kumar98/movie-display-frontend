@@ -2,26 +2,25 @@
 
 import React from 'react';
 import AuthForm from '@/components/AuthForm/AuthForm';
-import { loginUser } from '@/lib/api/auth.api';
 import { useRouter } from 'next/navigation';
 import { AuthFormData } from '@/components/AuthForm/AuthForm.types';
+import { useAuth } from '../hooks/useAuth';
+import { t } from '../i18n';
 
 const LoginPage = () => {
   const router = useRouter();
+  const { login } = useAuth(); // ✅ using the hook
 
   const handleLogin = async (formData: AuthFormData) => {
-    const result = await loginUser({
+    const result = await login({
       email: formData.email,
       password: formData.password,
     });
 
     if (result.success) {
-      localStorage.setItem('token', result.token);
-      localStorage.setItem('userId', result.userId);
-      alert('Login successful');
-      router.push('/movieList');
+      router.push('/movies');
     } else {
-      alert(result.error || 'Login failed');
+      alert(result.error || t('api.loginFailed'));
     }
   };
 

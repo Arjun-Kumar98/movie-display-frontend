@@ -12,12 +12,12 @@ export interface AddMoviePayload {
     try {
       const formData = new FormData();
       formData.append('title', data.title);
-      formData.append('publishYear', String(data.publishYear));
+      formData.append('publishingYear', String(data.publishYear));
       formData.append('userId', userId);
       formData.append('image', data.posterFile); // key must match backend
   
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/movies/upload`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/movies/upload`,
         {
           method: 'POST',
           headers: {
@@ -48,7 +48,7 @@ export interface AddMoviePayload {
   ) => {
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/movies/${movieId}`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/movies/detail/${movieId}`,
         {
           method: 'GET',
           headers: {
@@ -79,28 +79,26 @@ export interface AddMoviePayload {
 
 export interface UpdateMoviePayload {
     title: string;
-    publishYear: number;
+    publishingYear: number;
     posterFile: File | null;
   }
   
   export const updateMovie = async (
     movieId: number,
     data: UpdateMoviePayload,
-    userId: string,
     token: string
   ) => {
     try {
       const formData = new FormData();
       formData.append('title', data.title);
-      formData.append('publishYear', String(data.publishYear));
-      formData.append('userId', userId);
+      formData.append('publishingYear', String(data.publishingYear));
       formData.append('movieId', String(movieId));
   
       if (data.posterFile) {
         formData.append('image', data.posterFile);
       }
   
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/movies/update`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/movies/update`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -113,6 +111,54 @@ export interface UpdateMoviePayload {
     } catch (error) {
       console.error('Update movie error:', error);
       return { success: false, error: 'Failed to update movie.' };
+    }
+  };
+  
+  export interface Movie {
+    id: number;
+    title: string;
+    publishingYear: number;
+    posterUrl: string;
+  }
+  
+  export const getAllMovies = async (
+    userId: number,
+    page: number = 1,
+    limit: number = 8
+  ): Promise<{
+    success: boolean;
+    data: Movie[];
+    totalPages: number;
+    error?: string;
+  }> => {
+    try {
+      const token = typeof window !== 'undefined' ? localStorage.getItem('token') : '';
+  
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/movies/list?userId=${userId}&page=${page}&limit=${limit}`,
+        {
+          method: 'GET',
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+  
+      const result = await response.json();
+  
+      return {
+        success: response.ok,
+        data: result.movies || [],
+        totalPages: result.totalPages || 1,
+      };
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+      return {
+        success: false,
+        data: [],
+        totalPages: 1,
+        error: 'Failed to fetch movies',
+      };
     }
   };
   

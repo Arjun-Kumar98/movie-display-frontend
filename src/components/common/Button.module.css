@@ -1,0 +1,35 @@
+/* Submit Button */
+.submit-button {
+    padding: 12px 24px;
+    background-color: #2BD17E; /* Bright green */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #28c060; /* Slightly darker green on hover */
+  }
+  
+  /* Cancel Button */
+  .cancel-button {
+    padding: 12px 24px;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 12px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  

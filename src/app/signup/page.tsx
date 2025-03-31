@@ -5,6 +5,7 @@ import AuthForm from '@/components/AuthForm/AuthForm';
 import { signupUser } from '@/lib/api/auth.api';
 import { useRouter } from 'next/navigation';
 import { AuthFormData } from '@/components/AuthForm/AuthForm.types';
+import { t } from '../../i18n';
 
 const SignupPage = () => {
   const router = useRouter();
@@ -16,10 +17,10 @@ const SignupPage = () => {
     });
 
     if (result.success) {
-      alert('Signup successful');
+      alert(t('api.signupSuccess'));
       router.push('/');
     } else {
-      alert(result.error || 'Signup failed');
+      alert(result.error || t('api.signupFailed'));
     }
   };
 

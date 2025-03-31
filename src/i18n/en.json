@@ -29,9 +29,10 @@
         "signupSuccess": "User created successfully",
         "signupFailed": "Signup failed. Please try again",
         "movieAddSuccess": "Movie added successfully",
-        "movieAddFailed": "Failed to add movie",
+        "movieAddFailed": "Failed to add the movie",
+        "movieFetchFailed":"Failed to fetch the movies",
         "movieUpdateSuccess": "Movie updated successfully",
-        "movieUpdateFailed": "Failed to update movie",
+        "movieUpdateFailed": "Failed to update the movie",
         "unauthorized": "You are not authorized to perform this action.",
         "serverError": "Something went wrong. Please try again later."
       }

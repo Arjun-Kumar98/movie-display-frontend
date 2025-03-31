@@ -1,0 +1,72 @@
+.wrapper {
+    padding: 32px;
+    max-width: 960px;
+    margin: auto;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .actions button {
+    margin-left: 12px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  
+  .empty {
+    background-color: #2BD17E;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    color: white;
+  }
+  .addButton {
+    padding: 10px 20px;
+    background-color: #2BD17E;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .addButton:hover {
+    background-color: #28c060;
+  }
+  
+  .logoutButton {
+    padding: 10px 20px;
+    background-color: #FF4D4F;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+    background-color: #e54345;
+  }

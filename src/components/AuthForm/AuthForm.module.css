@@ -1,0 +1,17 @@
+.auth-form {
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #224957;
+    padding: 32px;
+    border-radius: 12px;
+  }
+  
+  .form-title {
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+  }
+  

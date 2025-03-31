@@ -1,0 +1,36 @@
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #093545;
+  color: white;
+}
+
+.auth-page-wrapper {
+  height: 100vh;
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #093545;
+}
+.movie-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* 🔥 stack vertically */
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
+  background-color: #093545;
+  padding: 16px;
+}
+

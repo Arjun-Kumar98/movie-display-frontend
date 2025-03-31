@@ -1,11 +1,11 @@
-export interface AuthPayload {
+export interface LoginPayload {
     email: string;
     password: string;
   }
   
-  export const loginUser = async (payload: AuthPayload) => {
+  export const loginUser = async (payload: LoginPayload) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/login`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
@@ -19,9 +19,9 @@ export interface AuthPayload {
     }
   };
   
-  export const signupUser = async (payload: AuthPayload) => {
+  export const signupUser = async (payload: LoginPayload) => {
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/auth/signup`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

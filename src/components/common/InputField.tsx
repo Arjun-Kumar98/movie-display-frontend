@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { UseFormRegister } from 'react-hook-form';
+import styles from './InputField.module.css';
 
 interface InputFieldProps {
   name: string;
@@ -22,15 +23,15 @@ const InputField: React.FC<InputFieldProps> = ({
   className = ''
 }) => {
   return (
-    <div className={`input-wrapper ${className}`}>
+    <div className={`${styles['input-wrapper']} ${className}`}>
       <input
         type={type}
         {...register(name)}
         placeholder={placeholder}
-        className={`input-field ${hasError ? 'input-error' : ''}`}
+        className={`${styles['input-field']} ${hasError ? styles['input-error'] : ''}`}
       />
       {hasError && (
-        <p className="input-error-text">{errorMessage}</p>
+        <p className={styles['input-error-text']}>{errorMessage}</p>
       )}
     </div>
   );

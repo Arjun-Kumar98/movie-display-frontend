@@ -4,8 +4,8 @@ import { AuthFormMode } from './AuthForm.types';
 
 export const getAuthFormSchema = (mode:AuthFormMode) =>
     yup.object().shape({
-        email:yup.string().email('Invalid email').required(t(`${mode}.email`)),
-        password:yup.string().required(t(`${mode}.password`)),
+        email:yup.string().email('Invalid email').required("Email is required"),
+        password:yup.string().required("Password is required"),
         confirmPassword:
         mode === 'signup'
         ? yup

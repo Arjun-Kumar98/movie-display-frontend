@@ -1,0 +1,74 @@
+.movie-form {
+  background-color: #224957;
+  padding: 32px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px; /* space between poster and inputs */
+  width: 100%;
+  max-width: 960px;
+}
+
+.movie-form-container {
+  display: flex;
+  flex-direction: row; /* two-column layout */
+  gap: 40px;
+  width: 100%;
+}
+
+.poster-upload {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  padding: 24px;
+  min-width: 280px;
+  min-height: 300px;
+  text-align: center;
+  color: white;
+}
+
+.poster-upload label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: white;
+}
+
+.poster-preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.poster-preview {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.remove-poster-btn {
+  background-color: transparent;
+  border: none;
+  color: #FF4D4F;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.form-inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
