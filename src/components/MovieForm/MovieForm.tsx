@@ -8,7 +8,7 @@ import { MovieFormProps, MovieFormData } from './MovieForm.types';
 import { movieFormSchema } from './MovieForm.validation';
 import InputField from '../common/InputField';
 import Button from '../common/Button';
-import styles from './MovieForm.module.css'; // ✅ Correct CSS Module import
+import styles from './MovieForm.module.css';
 
 const MovieForm: React.FC<MovieFormProps> = ({ mode, initialValues, onSubmit }) => {
   const router = useRouter(); 
