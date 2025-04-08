@@ -13,7 +13,6 @@ const AddMoviePage = () => {
   const token = localStorage.getItem('token') || '';
 
   const handleAddMovie = async (data: MovieFormData) => {
-    console.log("the add movie is called ");
     const fileList = data.posterFile as FileList;
     const posterFile = fileList?.[0];
 

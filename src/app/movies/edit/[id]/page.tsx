@@ -13,9 +13,9 @@ const EditMoviePage = () => {
   const params = useParams();
   const { token, loaded } = useAuth();
   const [initialValues, setInitialValues] = useState<MovieFormData | null>(null);
-  // Extract movieId only after hydration
+ 
   const movieId = loaded ? Number(params.id) : null;
-  // Fetch movie once token & id are ready
+  
   useEffect(() => {
     if (!loaded || !token || !movieId) return;
 
