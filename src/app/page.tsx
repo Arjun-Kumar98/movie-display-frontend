@@ -9,7 +9,7 @@ import { t } from '../i18n';
 
 const LoginPage = () => {
   const router = useRouter();
-  const { login } = useAuth(); // ✅ using the hook
+  const { login } = useAuth();
 
   const handleLogin = async (formData: AuthFormData) => {
     const result = await login({
